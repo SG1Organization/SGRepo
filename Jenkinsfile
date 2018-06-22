@@ -11,6 +11,6 @@ pipeline {
     }
   }
   environment {
-    MY_NAME = 'Chris'
+    MY_NAME = 'Mark'
   }
 }
