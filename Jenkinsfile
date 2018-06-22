@@ -11,6 +11,7 @@ pipeline {
         echo "${TEST_USER_PSW}"
       }
     }
+  } 
           stage('Testing') {
         failFast true
         parallel {
@@ -21,6 +22,8 @@ pipeline {
               sleep time: 10, unit: 'SECONDS'
             }
           }
+        } 
+         
           stage('Java 9') {
             agent { label 'jdk9' }
             steps {
@@ -42,12 +45,13 @@ pipeline {
           }
         }
       }
-    }
+
     stage('Say Kernel') {
       steps {
         echo "${KERNEL_VERSION}"
       }
     }
+   }   
     
       steps {
         echo "Deploying ${APP_VERSION}."
@@ -70,5 +74,5 @@ pipeline {
       echo 'Why didn\'t you push my button?'
     }
   }
-  }
+ }
 
