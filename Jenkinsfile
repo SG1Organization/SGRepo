@@ -11,7 +11,8 @@ pipeline {
         echo "${TEST_USER_PSW}"
       }
     }
-        stage('Deploy') {
+    
+  stage('Deploy') {
       options {
         timeout(time: 30, unit: 'SECONDS') 
       }
@@ -26,6 +27,7 @@ pipeline {
         echo "Deploying ${APP_VERSION}."
       }
     }
+    
   environment {
     MY_NAME = 'Mary'
     TEST_USER = credentials('test-user')
